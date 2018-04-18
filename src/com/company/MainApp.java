@@ -3,33 +3,25 @@ package com.company;
 public class MainApp {
 
     public static void main(String[] args) {
-        final Vehicle joesCar = new Car(5, 200000, true, "auto");
-        final Vehicle stevesBus = new Bus(3,100000,true, 31);
-        final Vehicle petersTipper = new Tipper(6, 80000, false, 15);
+        final Car joesCar = new Car(5, 200000, true, "auto");
 
-        int joesInsurancePolicyCost = 100* joesCar.getAge();
+        final Bus stevesBus = new Bus(3,100000,true, 31);
 
-        joesInsurancePolicyCost += joesCar.isDiesel() ? 500 : 0;
+        final Tipper petersTipper = new Tipper(6, 80000, false, 15);
 
-        joesInsurancePolicyCost += joesCar.getNumberOfMiles() > 200000 ? 500 : 0;
+        final InsurancePolicyCalculator calculator = InsurancePolicyCalculator.INSTANCE;
 
-        int stevesInsurancePolicyCost = 200* stevesBus.getAge();
+        final int joesInsurancePolicyCost = calculator.calculate(joesCar);
 
-        stevesInsurancePolicyCost += stevesBus.isDiesel() ? 1000 : 0;
+        final int stevesInsurancePolicyCost = calculator.calculate(stevesBus);
 
-        if (stevesBus.getNumberOfMiles() > 200000){
-            stevesInsurancePolicyCost += 1000;
-        }
-        else if( stevesBus.getNumberOfMiles() > 100000){
-            stevesInsurancePolicyCost += 500;
-        }
+        final int petersInsurancePolicyCost = calculator.calculate(petersTipper);
 
-        int petersInsurancePolicyCost = 300* petersTipper.getAge();
-
-        petersInsurancePolicyCost += petersTipper.getNumberOfMiles() > 80000 ? 700 : 0;
 
         System.out.println("Joe's policy cost is:" + joesInsurancePolicyCost);
+
         System.out.println("Steve's policy cost is:" + stevesInsurancePolicyCost);
+
         System.out.println("Peter's policy cost is:" + petersInsurancePolicyCost);
     }
 }
