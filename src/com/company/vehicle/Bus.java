@@ -1,4 +1,4 @@
-package com.company;
+package com.company.vehicle;
 
 public final class Bus extends Vehicle {
     private int numberOfSeats;

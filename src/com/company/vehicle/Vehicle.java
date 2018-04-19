@@ -1,4 +1,4 @@
-package com.company;
+package com.company.vehicle;
 
 public abstract class Vehicle {
     private int age;

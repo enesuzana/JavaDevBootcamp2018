@@ -1,4 +1,4 @@
-package com.company;
+package com.company.vehicle;
 
 public final class Tipper extends Vehicle {
     private int capacityInTons;

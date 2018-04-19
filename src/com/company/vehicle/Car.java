@@ -1,4 +1,4 @@
-package com.company;
+package com.company.vehicle;
 
 public final class Car extends Vehicle {
     private String transmission = "manual";
