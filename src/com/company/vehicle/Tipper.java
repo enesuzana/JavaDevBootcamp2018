@@ -3,10 +3,10 @@ package com.company.vehicle;
 public final class Tipper extends Vehicle {
     private int capacityInTons;
 
-    public Tipper(){
-
+    public Tipper() {
     }
-    public Tipper(int age, long numberOfMiles, boolean isDiesel, int capacityInTons){
+
+    public Tipper(int age, long numberOfMiles, boolean isDiesel, int capacityInTons) {
         super(age, numberOfMiles, isDiesel);
         this.capacityInTons = capacityInTons;
     }
@@ -17,5 +17,9 @@ public final class Tipper extends Vehicle {
 
     public void setCapacityInTons(int capacityInTons) {
         this.capacityInTons = capacityInTons;
+    }
+
+    public Tipper(int age, long numberOfMiles, boolean isDiesel) {
+        super(age, numberOfMiles, isDiesel);
     }
 }

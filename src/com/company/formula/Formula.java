@@ -1,4 +1,4 @@
-package com.company;
+package com.company.formula;
 
 import com.company.vehicle.Vehicle;
 public enum Formula {
@@ -19,7 +19,7 @@ public enum Formula {
         public int calculate(Vehicle vehicle){
             int cost = 200* vehicle.getAge();
 
-            cost += Vehicle.isDiesel() ? 1000 : 0;
+            cost += vehicle.isDiesel() ? 1000 : 0;
 
             if (vehicle.getNumberOfMiles() > 200000){
                 cost += 1000;
@@ -39,5 +39,5 @@ public enum Formula {
             return cost;
         }
     };
-    public abstract Vehicle calculate(Vehicle vehicle);
+    public abstract int  calculate(Vehicle vehicle);
 }
