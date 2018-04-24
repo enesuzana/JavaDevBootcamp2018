@@ -54,9 +54,6 @@ public final class VehicleInfoPlainFileDao implements VehicleInfoDao {
                         .withNumberOfMiles(Long.parseLong(tokens[VEHICLE_MILES]))
                         .withIsDiesel(Boolean.parseBoolean(tokens[VEHICLE_IS_DIESEL]))
                         .build();
-                /*final VehicleInfo info = new VehicleInfo(tokens[VEHICLE_ID], tokens[VEHICLE_TYPE],
-                        tokens[VEHICLE_FORMULA], Integer.parseInt(tokens[VEHICLE_AGE]),
-                        Long.parseLong(tokens[VEHICLE_MILES]), Boolean.parseBoolean(tokens[VEHICLE_IS_DIESEL]));*/
 
                 vehicles.add(info);
             }
