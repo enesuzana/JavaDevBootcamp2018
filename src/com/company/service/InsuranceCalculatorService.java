@@ -17,7 +17,8 @@ public final class InsuranceCalculatorService {
     private String filePath;
 
     public InsuranceCalculatorService(String filePath) {
-        this.filePath = filePath;
+        this.filePath = "C:\\Users\\Cafedona\\java bootcamp\\examples\\VehiclesDatabase.txt";
+
     }
 
     public List<InsuranceCalculationResult> calculateAll() {
@@ -41,7 +42,7 @@ public final class InsuranceCalculatorService {
 
                 final int totalCost = calculator.calculate(vehicle, formula);
 
-                final InsuranceCalculationResult result = new InsuranceCalculationResult(info.getId(), totalCost);
+                final InsuranceCalculationResult result = new InsuranceCalculationResult(info.getVehicleTypeName(), info.getId(), totalCost);
 
                 resultList.add(result);
 

@@ -7,8 +7,8 @@ import java.util.List;
 public class MainApp {
 
 
-    private static final String OUTPUT_FORMAT = "Vehicle with id %s has total cost %d";
-    
+    private static final String OUTPUT_FORMAT = "%s id %s has total cost %d";
+
     public static void main(String[] args) {
 
 
@@ -17,7 +17,7 @@ public class MainApp {
             final List<InsuranceCalculationResult> resultList = service.calculateAll();
 
             for (InsuranceCalculationResult result : resultList) {
-                final String output = String.format(OUTPUT_FORMAT, result.getId(), result.getCost());
+                final String output = String.format(OUTPUT_FORMAT, result.getVehicleTypeName(), result.getId(), result.getCost());
                 System.out.println(output);
             }
 
