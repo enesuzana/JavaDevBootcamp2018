@@ -46,9 +46,17 @@ public final class VehicleInfoPlainFileDao implements VehicleInfoDao {
                 final String line = scanner.nextLine();
                 final String[] tokens = line.split(SEPARATOR);
 
-                final VehicleInfo info = new VehicleInfo(tokens[VEHICLE_ID], tokens[VEHICLE_TYPE],
+                final VehicleInfo.Builder builder = VehicleInfo.builder();
+                final VehicleInfo info = builder.withId(tokens[VEHICLE_ID])
+                        .withVehicleTypeName(tokens[VEHICLE_TYPE])
+                        .withVehicleTypeFormula(tokens[VEHICLE_FORMULA])
+                        .withAge(Integer.parseInt(tokens[VEHICLE_AGE]))
+                        .withNumberOfMiles(Long.parseLong(tokens[VEHICLE_MILES]))
+                        .withIsDiesel(Boolean.parseBoolean(tokens[VEHICLE_IS_DIESEL]))
+                        .build();
+                /*final VehicleInfo info = new VehicleInfo(tokens[VEHICLE_ID], tokens[VEHICLE_TYPE],
                         tokens[VEHICLE_FORMULA], Integer.parseInt(tokens[VEHICLE_AGE]),
-                        Long.parseLong(tokens[VEHICLE_MILES]), Boolean.parseBoolean(tokens[VEHICLE_IS_DIESEL]));
+                        Long.parseLong(tokens[VEHICLE_MILES]), Boolean.parseBoolean(tokens[VEHICLE_IS_DIESEL]));*/
 
                 vehicles.add(info);
             }
